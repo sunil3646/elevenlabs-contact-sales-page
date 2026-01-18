@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Roboto', sans-serif;
+}
+
+#left, #right {
+    width: 50%;
+}
+
+#left{
+    background-color: rgba(28, 28, 28);
+    color: #ffffff;
+    padding: 60px 0px 0px 3.8rem;
+    
+}
+
+#right{
+    background-color: white;
+    color: black;
+    display: flex;
+    padding: 60px 0px 0px 7.5rem;
+    
+}
+
+#left h1{
+    font-size: 20px;
+    padding-bottom: 50px;
+    
+}
+
+#left h2{
+    font-size: 47px;
+    padding-bottom: 20px;
+    font-weight: normal;
+}
+.list ul li{
+    padding: 5.5px 0px;
+    font-size: 17.5px;
+    list-style: none;
+}
+
+#Trusted{
+    opacity: 0.5;
+    padding: 50px 0px 52px 0px;
+}
+
+ul li{
+    list-style: none;
+}   
+
+#icons{
+    display: flex;
+    gap: 15px;
+    width: auto;
+  height: auto;
+}
+
+#right h2{
+    padding: 100px 0px 10px 0px; 
+    font-size: 38px;
+    font-weight: normal;
+}
+
+#right p{
+    font-size: 16px;
+    opacity: 0.7;
+    padding-bottom: 30px;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.login-form label{
+    font-size: 14px;
+    padding-bottom: 18px;
+    text-transform: capitalize;
+}
+
+.login-form input{
+    width: 525px;
+    height: 45px;
+    border: 1px solid #C4C4C4;
+    border-radius: 8px;
+    padding-left: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+button{
+    width: 65px;
+    height: 40px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#footer{
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.step-bar {
+  display: flex;
+  gap: 12px;
+  padding-top: 25px;
+}
+
+.step-bar span {
+  width: 72px;
+  height: 4px;
+  background: #d1d5db;  /* grey */
+  border-radius: 10px;
+}
+
+.step-bar .active {
+  background: #000;    /* black */
+}
+
+@media (max-width: 768px){
+.rating{
+    display: none;
+}
+}
+
+.rating{
+    padding-top: 40px;
+    font-size: 18px;
+    
+}
+
