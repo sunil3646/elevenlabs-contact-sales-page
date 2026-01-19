@@ -1,147 +1,193 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-#main{
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    font-family: 'Roboto', sans-serif;
-}
+        :root {
+            --bg-dark: rgb(28, 28, 28);
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --border-color: #d1d5db;
+            --container-padding: clamp(1.5rem, 5vw, 4rem);
+        }
 
-#left, #right {
-    width: 50%;
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
 
-#left{
-    background-color: rgba(28, 28, 28);
-    color: #ffffff;
-    padding: 60px 0px 0px 3.8rem;
-    
-}
+        /* 2. AUTOMATIC GRID LAYOUT 
+           This grid automatically stacks when the space is too tight (below 900px) */
+        #main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+            min-height: 100vh;
+            width: 100%;
+        }
 
-#right{
-    background-color: white;
-    color: black;
-    display: flex;
-    padding: 60px 0px 0px 7.5rem;
-    
-}
+        /* 3. LEFT SECTION (Auto-adjusts padding) */
+        #left {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            padding: var(--container-padding);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-#left h1{
-    font-size: 20px;
-    padding-bottom: 50px;
-    
-}
+        #header {
+            font-size: 20px;
+            margin-bottom: clamp(2rem, 5vh, 4rem);
+            font-weight: 700;
+        }
 
-#left h2{
-    font-size: 47px;
-    padding-bottom: 20px;
-    font-weight: normal;
-}
-.list ul li{
-    padding: 5.5px 0px;
-    font-size: 17.5px;
-    list-style: none;
-}
+        #left h2 {
+            /* Fluid font: min 28px, scales with width, max 48px */
+            font-size: clamp(1.75rem, 4vw, 3rem); 
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
 
-#Trusted{
-    opacity: 0.5;
-    padding: 50px 0px 52px 0px;
-}
+        .list ul {
+            list-style: none;
+        }
 
-ul li{
-    list-style: none;
-}   
+        .list ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 0.75rem 0;
+            font-size: clamp(1rem, 1.2vw, 1.1rem);
+            color: #e0e0e0;
+        }
 
-#icons{
-    display: flex;
-    gap: 15px;
-    width: auto;
-  height: auto;
-}
+        .list img {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
 
-#right h2{
-    padding: 100px 0px 10px 0px; 
-    font-size: 38px;
-    font-weight: normal;
-}
+        #Trusted {
+            color: var(--text-muted);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
 
-#right p{
-    font-size: 16px;
-    opacity: 0.7;
-    padding-bottom: 30px;
-}
+        /* Auto-wrapping icons */
+        #icons {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
 
-.login-form{
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 20px;
-}
+        #icons img {
+            height: clamp(18px, 2.5vh, 24px);
+            width: auto;
+            opacity: 0.8;
+        }
 
-.login-form label{
-    font-size: 14px;
-    padding-bottom: 18px;
-    text-transform: capitalize;
-}
+        .rating {
+            font-size: 1.1rem;
+            color: #fbbf24;
+        }
 
-.login-form input{
-    width: 525px;
-    height: 45px;
-    border: 1px solid #C4C4C4;
-    border-radius: 8px;
-    padding-left: 10px;
-    font-size: 14px;
-    opacity: 0.8;
-}
+        .rating span {
+            color: #fff;
+            margin-left: 8px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
 
-button{
-    width: 65px;
-    height: 40px;
-    background-color: gray;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    cursor: pointer;
-}
+        /* 4. RIGHT SECTION */
+        #right {
+            padding: var(--container-padding);
+            display: grid;
+            place-items: center;
+        }
 
-#footer{
-    padding-top: 25px;
-    display: flex;
-    justify-content: space-between;
-}
+        .form-container {
+            width: 100%;
+            max-width: 500px;
+        }
 
+        #right h2 {
+            font-size: clamp(1.5rem, 3vw, 2.4rem);
+            margin-bottom: 0.5rem;
+        }
 
+        #right p {
+            color: #6b7280;
+            margin-bottom: 2.5rem;
+        }
 
-.step-bar {
-  display: flex;
-  gap: 12px;
-  padding-top: 25px;
-}
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5rem;
+        }
 
-.step-bar span {
-  width: 72px;
-  height: 4px;
-  background: #d1d5db;  /* grey */
-  border-radius: 10px;
-}
+        .login-form label {
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
 
-.step-bar .active {
-  background: #000;    /* black */
-}
+        .login-form input {
+            width: 100%;
+            height: 50px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0 1rem;
+            font-size: 1rem;
+        }
 
-@media (max-width: 768px){
-.rating{
-    display: none;
-}
-}
+        /* 5. FOOTER (Auto-aligns) */
+        #footer {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap; /* Wraps button/steps on tiny screens */
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
 
-.rating{
-    padding-top: 40px;
-    font-size: 18px;
-    
-}
+        button {
+            padding: 12px 32px;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: fit-content;
+        }
 
+        .step-bar {
+            display: flex;
+            gap: 8px;
+        }
+
+        .step-bar span {
+            width: clamp(30px, 8vw, 60px);
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 2px;
+        }
+
+        .step-bar .active {
+            background: #000;
+        }
+
+        /* Single small adjustment for the very smallest phones */
+        @media (max-width: 400px) {
+            button { width: 100%; }
+        }
